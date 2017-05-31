@@ -1,0 +1,13 @@
+<h1>Here are some fuckin' swass shrooms</h1>
+
+ <div>
+    <input type='radio' value="true" name="mushrooms" ng-model="radio">Show Edible</input>
+    <input type='radio' value="false" name="mushrooms" ng-model="radio">Show Poisonous</input>
+      <input type="text" ng-model="query">
+  </div>
+<div ng-repeat="item in shrooms | filter: query | filter: {edible: radio}">
+   <h3>{{item.name}}</h3>
+   <p>{{item.description}}</p>
+   <p>Edible: {{item.edible}}</p>
+   <hr>
+</div>
